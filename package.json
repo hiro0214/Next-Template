@@ -7,9 +7,9 @@
   },
   "scripts": {
     "prettier": "prettier --write src",
-    "dev": "next dev",
+    "dev": "next dev --port 8080",
     "build": "next build",
-    "start": "next start",
+    "start": "next start --port 8080",
     "lint": "next lint --dir src && npm run prettier"
   },
   "dependencies": {
