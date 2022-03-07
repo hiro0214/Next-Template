@@ -7,10 +7,12 @@
   },
   "scripts": {
     "prettier": "prettier --write src",
+    "eslint": "eslint --fix --ext .ts,.tsx src",
+    "format": "npm run eslint && npm run prettier",
     "dev": "next dev --port 8080",
-    "build": "next build",
-    "start": "next start --port 8080",
-    "lint": "next lint --dir src && npm run prettier"
+    "build": "npm run format && next build",
+    "prod": "next build",
+    "start": "next start --port 8080"
   },
   "dependencies": {
     "next": "12.1.0",
@@ -23,7 +25,9 @@
     "eslint": "8.10.0",
     "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-unused-imports": "^2.0.0",
     "prettier": "^2.5.1",
-    "typescript": "4.6.2"
+    "typescript": "^4.5.5"
   }
 }
