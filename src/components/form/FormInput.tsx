@@ -1,12 +1,5 @@
 import { VFC, memo, ReactElement } from 'react';
-import {
-  FormInputPropsType,
-  FormInputElementType,
-  TextInputType,
-  TextAreaType,
-  RadioGroupType,
-  CheckBoxType
-} from '../../types/form/index';
+import { FormInputPropsType, TextInputType, TextAreaType, RadioGroupType, CheckBoxType } from '../../types/form/index';
 import { CheckBox } from './CheckBox';
 import { RadioGroup } from './RadioGroup';
 import { TextArea } from './TextArea';
@@ -15,25 +8,24 @@ import { TextInput } from './TextInput';
 export const FormInput: VFC<FormInputPropsType> = memo((props) => {
   const { type, element } = props;
 
-  let _element: FormInputElementType;
   let component: ReactElement = <></>;
 
   switch (type) {
     case 'text':
-      _element = element as TextInputType;
-      component = <TextInput name={_element.name} placeholder={_element.placeholder} />;
+      const textInputElement = element as TextInputType;
+      component = <TextInput name={textInputElement.name} placeholder={textInputElement.placeholder} />;
       break;
     case 'textarea':
-      _element = element as TextAreaType;
-      component = <TextArea name={_element.name} placeholder={_element.placeholder} rows={_element.rows} />;
+      const textAreaElement = element as TextAreaType;
+      component = <TextArea name={textAreaElement.name} placeholder={textAreaElement.placeholder} rows={textAreaElement.rows} />;
       break;
     case 'radio':
-      _element = element as RadioGroupType;
-      component = <RadioGroup name={_element.name} values={_element.values} />;
+      const radioGroupElement = element as RadioGroupType;
+      component = <RadioGroup name={radioGroupElement.name} values={radioGroupElement.values} />;
       break;
     case 'checkbox':
-      _element = element as CheckBoxType;
-      component = <CheckBox name={_element.name} value={_element.value} />
+      const checkBoxElement = element as CheckBoxType;
+      component = <CheckBox name={checkBoxElement.name} value={checkBoxElement.value} />;
       break;
   }
 

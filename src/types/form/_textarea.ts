@@ -1,5 +1,5 @@
 export interface TextAreaType {
   name: string;
-  placeholder: string;
-  rows: number;
+  placeholder?: string;
+  rows?: number;
 }
