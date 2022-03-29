@@ -6,11 +6,7 @@ import { TextInputType } from './_textInput';
 export interface FormPropsType {
   name: string;
   children: FormItemType[];
-  btn: {
-    label: string;
-    onclick: () => void;
-    goBack: boolean;
-  };
+  btn: FormBtnType;
 }
 
 export interface FormItemType extends FormInputPropsType {
@@ -25,3 +21,9 @@ export interface FormInputPropsType {
 export type FormInputElementType = TextInputType | TextAreaType | RadioGroupType | CheckBoxType;
 
 type FormInputTypeAttrType = 'text' | 'textarea' | 'radio' | 'checkbox';
+
+export interface FormBtnType {
+  label: string;
+  onclick: () => void;
+  goBack?: boolean;
+}
