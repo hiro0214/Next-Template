@@ -1,0 +1,39 @@
+$palettes: (
+  'black': (
+    'default': #394046,
+  ),
+  'gray': (
+    'default': #f6f6f6,
+    'l1': #f9f9fa,
+  ),
+  'red': (
+    'default': #d34040,
+    'l1': #ffe3e3,
+  ),
+  'blue': (
+    'default': #0f59eb,
+    'd1': #5a83e0,
+    'd2': #3d58b0,
+    'l1': #8ba8e9,
+    'l2': #b8cef2,
+    'l3': #d1e2fa,
+    'l4': #e6efff,
+  ),
+  'skyblue': (
+    'default': #50c2ff,
+  ),
+  'green': (
+    'default': #51cf66,
+  ),
+  'orange': (
+    'default': #ff7850,
+  ),
+  'border': (
+    'default': #dee1e5,
+    'd1': #cfd3da,
+  ),
+);
+
+@function palette($group, $val: 'default') {
+  @return map-get(map-get($palettes, $group), $val);
+}

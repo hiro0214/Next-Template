@@ -1,0 +1,25 @@
+@use '../../lib/functions/_index' as *;
+
+.u-white {
+  color: #fff;
+}
+
+.u-black {
+  color: palette('black');
+}
+
+.u-red {
+  color: palette('red');
+}
+
+.u-blue {
+  color: palette('blue');
+}
+
+.u-green {
+  color: palette('green');
+}
+
+.u-orange {
+  color: palette('orange');
+}

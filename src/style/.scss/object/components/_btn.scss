@@ -1,0 +1,39 @@
+@use '../../lib/functions/_index' as *;
+@use '../../lib/mixins/_index' as *;
+
+.c-btn {
+  display: block;
+  @include rem('pt', 10, 10);
+  @include rem('pb', 10, 10);
+  @include font(16, 16);
+  color: #fff;
+  text-align: center;
+  background: palette('blue');
+  border: 1px solid transparent;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgb(58 63 75 / 10%);
+  transition: opacity 0.2s;
+
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  &--clear {
+    background: transparent;
+    border: 1px solid #fff;
+  }
+
+  &--white {
+    color: palette('black');
+    background: #fff;
+    border: 1px solid palette('border', 'd1');
+  }
+
+  @include media(md) {
+    min-width: 200px;
+  }
+  @include media(sm) {
+    width: 100%;
+  }
+}
