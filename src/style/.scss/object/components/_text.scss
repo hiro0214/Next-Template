@@ -13,8 +13,8 @@
     @include rem('pr', 12, 12);
     @include rem('pb', 7, 7);
     @include font(16, 16);
-    background: palette('gray', 'l1');
-    border: 1px solid palette('border', 'd1');
+    background: #f9f9fa;
+    border: 1px solid palette('border', 'l1');
     border-radius: 4px;
 
     &:focus {
@@ -29,7 +29,11 @@
     max-width: 400px;
 
     &--large {
-      max-width: 800px;
+      max-width: 600px;
+    }
+
+    &--full {
+      max-width: 100%;
     }
   }
   @include media(sm) {

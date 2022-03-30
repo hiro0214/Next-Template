@@ -9,6 +9,7 @@
 
 | Prop Name | Description                |
 | --------- | -------------------------- |
+| ttl       | フォームのタイトルの指定   |
 | name      | フォームの name 属性の指定 |
 | children  | フォーム内に表示させる項目 |
 | btn       | フォーム内のボタンの設定   |
@@ -17,11 +18,13 @@
 
 - [types/form/index.ts](../../types/form/index.ts)より、**FormItemType**を import 後、指定する必要がある。
 
-| Prop Name | Description                            |
-| --------- | -------------------------------------- |
-| hdg       | 入力項目のタイトル名                   |
-| type      | input の種別                           |
-| element   | input コンポーネントにバインドする要素 |
+| Prop Name  | Description                            |
+| ---------- | -------------------------------------- |
+| hdg        | 入力項目のタイトル名                   |
+| required   | 入力項目の必須フラグ                   |
+| annotation | 入力項目の注釈                         |
+| type       | input の種別                           |
+| element    | input コンポーネントにバインドする要素 |
 
 - type には`text`、`textarea`、`radio`、`checkbox`のいずれかを指定(これ以外はエラーになる)。
 - element には、type に指定した要素に対応した element 項目を指定。
@@ -63,6 +66,7 @@
 const formItem: FormItemType[] = [
   {
     hdg: '名前',
+    required: true,
     type: 'text',
     element: {
       name: 'name',
@@ -71,6 +75,7 @@ const formItem: FormItemType[] = [
   },
   {
     hdg: 'お問い合わせ',
+    required: true,
     type: 'textarea',
     element: {
       name: 'contact',
@@ -80,6 +85,8 @@ const formItem: FormItemType[] = [
   },
   {
     hdg: '色',
+    required: true,
+    annotation: 'お好きな色を選択してください',
     type: 'radio',
     element: {
       name: 'color',
@@ -88,6 +95,7 @@ const formItem: FormItemType[] = [
   },
   {
     hdg: '確認事項',
+    required: true,
     type: 'checkbox',
     element: {
       name: 'confirm',
@@ -107,7 +115,7 @@ const btnElement: FormBtnType = {
 };
 
 // Page calling
-<Form name={'signup'} btn={btnElement}>
+<Form ttl={'会員登録'} name={'signup'} btn={btnElement}>
   {formItem}
 </Form>;
 ```

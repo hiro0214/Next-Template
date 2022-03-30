@@ -11,7 +11,28 @@
 }
 
 .c-checkbox {
-  [type='checkbox'] {
+  > label {
+    position: relative;
+    @include rem('pl', 35, 35);
+    @include font(16, 16);
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 26px;
+      height: 26px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 12px;
+      border: 1px solid palette('border');
+      border-radius: 4px;
+      transition: all 0.1s;
+      transform: translateY(-50%);
+    }
+  }
+
+  > [type='checkbox'] {
     @extend %visuallyHidden;
 
     &:focus {
@@ -28,27 +49,6 @@
           border: 1px solid palette('blue');
         }
       }
-    }
-  }
-
-  label {
-    position: relative;
-    @include rem('pl', 30, 30);
-
-    &::before {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      width: 20px;
-      height: 20px;
-      content: '';
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 9px;
-      border: 1px solid #80899c;
-      border-radius: 4px;
-      transition: all 0.1s;
-      transform: translateY(-50%);
     }
   }
 }

@@ -4,6 +4,7 @@ import { TextAreaType } from './_textarea';
 import { TextInputType } from './_textInput';
 
 export interface FormPropsType {
+  ttl: string;
   name: string;
   children: FormItemType[];
   btn: FormBtnType;
@@ -11,6 +12,8 @@ export interface FormPropsType {
 
 export interface FormItemType extends FormInputPropsType {
   hdg: string;
+  required: boolean;
+  annotation?: string;
 }
 
 export interface FormInputPropsType {

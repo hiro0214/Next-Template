@@ -13,11 +13,19 @@ export const FormInput: VFC<FormInputPropsType> = memo((props) => {
   switch (type) {
     case 'text':
       const textInputElement = element as TextInputType;
-      component = <TextInput name={textInputElement.name} placeholder={textInputElement.placeholder} />;
+      component = (
+        <TextInput
+          name={textInputElement.name}
+          placeholder={textInputElement.placeholder}
+          size={textInputElement.size}
+        />
+      );
       break;
     case 'textarea':
       const textAreaElement = element as TextAreaType;
-      component = <TextArea name={textAreaElement.name} placeholder={textAreaElement.placeholder} rows={textAreaElement.rows} />;
+      component = (
+        <TextArea name={textAreaElement.name} placeholder={textAreaElement.placeholder} rows={textAreaElement.rows} />
+      );
       break;
     case 'radio':
       const radioGroupElement = element as RadioGroupType;
