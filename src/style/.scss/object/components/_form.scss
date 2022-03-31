@@ -1,6 +1,5 @@
 @use '../../lib/functions/_index' as *;
 @use '../../lib/mixins/_index' as *;
-@use '../components/_hdg' as *;
 
 .c-form {
   @include rem('pt', 40, 30);
@@ -42,6 +41,7 @@
     color: palette('red');
     background: #fff;
     border: 1px solid palette('red');
+    border-radius: 4px;
   }
 
   &__label {

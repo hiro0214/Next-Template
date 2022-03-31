@@ -13,7 +13,7 @@ export const Form: VFC<FormPropsType> = memo((props) => {
         <div className='c-form__item' key={i}>
           <div className='c-form__hdg'>
             {item.hdg}
-            {item.required && <span className='c-form__required'>必須</span>}
+            {item.required !== false && <span className='c-form__required'>必須</span>}
           </div>
           <div className='c-form__detail'>
             {item.annotation && <span className='c-form__label'>{item.annotation}</span>}

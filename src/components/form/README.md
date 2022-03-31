@@ -26,7 +26,8 @@
 | type       | input の種別                           |
 | element    | input コンポーネントにバインドする要素 |
 
-- type には`text`、`textarea`、`radio`、`checkbox`のいずれかを指定(これ以外はエラーになる)。
+- type には`text`、`textarea`、`radio`、`checkbox`、`select`のいずれかを指定(FormInputTypeAttrType を参照)。
+- デフォルトでは必須フラグは true になっている。必須フラグを非表示にする時だけ required に false を指定。
 - element には、type に指定した要素に対応した element 項目を指定。
 - 詳細は下記を参照。
 
@@ -45,6 +46,10 @@
 #### checkbox
 
 - [types/form/\_checkbox.ts](../../types/form/_checkbox.ts)
+
+#### select
+
+- [types/form/\_select.ts](../../types/form/_select.ts)
 
 ### btn Prop
 
@@ -66,7 +71,6 @@
 const formItem: FormItemType[] = [
   {
     hdg: '名前',
-    required: true,
     type: 'text',
     element: {
       name: 'name',
@@ -75,7 +79,6 @@ const formItem: FormItemType[] = [
   },
   {
     hdg: 'お問い合わせ',
-    required: true,
     type: 'textarea',
     element: {
       name: 'contact',
@@ -85,7 +88,7 @@ const formItem: FormItemType[] = [
   },
   {
     hdg: '色',
-    required: true,
+    required: false,
     annotation: 'お好きな色を選択してください',
     type: 'radio',
     element: {
@@ -95,11 +98,18 @@ const formItem: FormItemType[] = [
   },
   {
     hdg: '確認事項',
-    required: true,
     type: 'checkbox',
     element: {
       name: 'confirm',
       value: '同意する',
+    },
+  },
+  {
+    hdg: 'お届け日',
+    type: 'select',
+    element: {
+      name: 'delivery',
+      values: ['4月1日', '4月2日', '4月3日'],
     },
   },
 ];

@@ -1,7 +1,15 @@
 import { VFC, memo, ReactElement } from 'react';
-import { FormInputPropsType, TextInputType, TextAreaType, RadioGroupType, CheckBoxType } from '../../types/form/index';
+import {
+  FormInputPropsType,
+  TextInputType,
+  TextAreaType,
+  RadioGroupType,
+  CheckBoxType,
+  SelectBoxType,
+} from 'types/form/index';
 import { CheckBox } from './CheckBox';
 import { RadioGroup } from './RadioGroup';
+import { SelectBox } from './SelectBox';
 import { TextArea } from './TextArea';
 import { TextInput } from './TextInput';
 
@@ -35,6 +43,15 @@ export const FormInput: VFC<FormInputPropsType> = memo((props) => {
       const checkBoxElement = element as CheckBoxType;
       component = <CheckBox name={checkBoxElement.name} value={checkBoxElement.value} />;
       break;
+    case 'select':
+      const selectBoxElement = element as SelectBoxType;
+      component = (
+        <SelectBox name={selectBoxElement.name} values={selectBoxElement.values} hdg={selectBoxElement.hdg} />
+      );
+      break;
+    default: {
+      throw new Error('Unexpected FormItem Type');
+    }
   }
 
   return component;
