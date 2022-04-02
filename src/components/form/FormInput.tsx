@@ -6,6 +6,7 @@ import {
   RadioGroupType,
   CheckBoxType,
   SelectBoxType,
+  OtherItemType,
 } from 'types/form/index';
 import { CheckBox } from './CheckBox';
 import { RadioGroup } from './RadioGroup';
@@ -49,6 +50,11 @@ export const FormInput: VFC<FormInputPropsType> = memo((props) => {
         <SelectBox name={selectBoxElement.name} values={selectBoxElement.values} hdg={selectBoxElement.hdg} />
       );
       break;
+    case 'other':
+      const otherElement = element as OtherItemType;
+      component = otherElement.element;
+      break;
+
     default: {
       throw new Error('Unexpected FormItem Type');
     }

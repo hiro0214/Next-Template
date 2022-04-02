@@ -1,4 +1,4 @@
-export type CheckBoxType = {
+export interface CheckBoxType {
   name: string;
   value: string;
-};
+}

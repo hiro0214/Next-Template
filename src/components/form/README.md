@@ -26,7 +26,7 @@
 | type       | input の種別                           |
 | element    | input コンポーネントにバインドする要素 |
 
-- type には`text`、`textarea`、`radio`、`checkbox`、`select`のいずれかを指定(FormInputTypeAttrType を参照)。
+- type には`text`、`textarea`、`radio`、`checkbox`、`select`、`other`のいずれかを指定(FormInputTypeAttrType を参照)。
 - デフォルトでは必須フラグは true になっている。必須フラグを非表示にする時だけ required に false を指定。
 - element には、type に指定した要素に対応した element 項目を指定。
 - 詳細は下記を参照。
@@ -50,6 +50,10 @@
 #### select
 
 - [types/form/\_select.ts](../../types/form/_select.ts)
+
+#### other
+
+- [types/form/\_other.ts](../../types/form/_other.ts)
 
 ### btn Prop
 

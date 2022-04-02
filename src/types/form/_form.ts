@@ -1,4 +1,5 @@
 import { CheckBoxType } from './_checkbox';
+import { OtherItemType } from './_other';
 import { RadioGroupType } from './_radio';
 import { SelectBoxType } from './_select';
 import { TextAreaType } from './_textarea';
@@ -22,9 +23,15 @@ export interface FormInputPropsType {
   element: FormInputElementType;
 }
 
-export type FormInputElementType = TextInputType | TextAreaType | RadioGroupType | CheckBoxType | SelectBoxType;
+export type FormInputElementType =
+  | TextInputType
+  | TextAreaType
+  | RadioGroupType
+  | CheckBoxType
+  | SelectBoxType
+  | OtherItemType;
 
-type FormInputTypeAttrType = 'text' | 'textarea' | 'radio' | 'checkbox' | 'select';
+type FormInputTypeAttrType = 'text' | 'textarea' | 'radio' | 'checkbox' | 'select' | 'other';
 
 export interface FormBtnType {
   label: string;

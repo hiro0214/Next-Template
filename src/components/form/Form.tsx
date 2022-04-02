@@ -6,6 +6,10 @@ import { FormInput } from './FormInput';
 export const Form: VFC<FormPropsType> = memo((props) => {
   const { ttl, name, children, btn } = props;
 
+  if (!children || children.length === 0) {
+    throw new Error('Not defined FormItems');
+  }
+
   return (
     <form className='c-form' name={name}>
       <h2 className='c-form__ttl c-hdg c-hdg--2'>{ttl}</h2>
