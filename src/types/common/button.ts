@@ -1,9 +1,9 @@
-export type CommonButtonType = {
+export interface CommonButtonType {
   label: string;
   color?: ColorValueType;
   onclick?: () => void;
   isDisabled?: boolean;
-};
+}
 
 type ColorValueType =
   | 'white'
