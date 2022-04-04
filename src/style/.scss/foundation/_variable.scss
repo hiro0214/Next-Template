@@ -8,7 +8,7 @@ $baseSize: (
     'blockPaddingBottom': null,
   ),
   'sp': (
-    'baseContainer': 315,
+    'baseContainer': 335,
     'basePadding': 20,
     'blockMarginTop': null,
     'blockMarginBottom': null,
@@ -19,7 +19,7 @@ $baseSize: (
 
 $containerSize: (
   'pc': map-get(map-get($baseSize, 'pc'), 'baseContainer') + map-get(map-get($baseSize, 'pc'), 'basePadding') * 2,
-  'sp': map-get(map-get($baseSize, 'sp'), 'baseContainer') + map-get(map-get($baseSize, 'sp'), 'basePadding') * 2,
+  'sp': map-get(map-get($baseSize, 'sp'), 'baseContainer'),
 );
 
 $defaultsFontSize: (
