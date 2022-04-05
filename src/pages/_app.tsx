@@ -1,8 +1,8 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { useEffect } from 'react';
-import '../style/style.scss';
 import { commonModules } from '../modules/common/index';
+import '../style/style.scss';
 
 function MyApp({ Component, pageProps, router }: AppProps) {
   useEffect(() => {
