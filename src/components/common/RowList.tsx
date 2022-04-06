@@ -5,12 +5,12 @@ export const RowList: VFC<RowListType> = memo((props) => {
   const { children, pcLine = 4, spLine = 2 } = props;
 
   return (
-    <div className={`c-row c-row--pc${pcLine} c-row--sp${spLine}`}>
+    <ul className={`c-row c-row--pc${pcLine} c-row--sp${spLine}`}>
       {children.map((child, i) => (
-        <div className={'c-row__item'} key={i}>
+        <li className={'c-row__item'} key={i}>
           {child}
-        </div>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 });

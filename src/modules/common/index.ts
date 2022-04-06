@@ -1,5 +1,5 @@
-import { switchViewportBehaivor } from './_viewport';
+import { switchViewportBehavior } from './_viewport';
 
 export const commonModules = () => {
-  switchViewportBehaivor();
+  switchViewportBehavior();
 };

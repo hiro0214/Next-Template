@@ -1,6 +1,6 @@
 import { breakPoint, containerSize } from 'variables/config';
 
-export const switchViewportBehaivor = (): void => {
+export const switchViewportBehavior = (): void => {
   const viewport = document.querySelector('meta[name="viewport"]') as Element;
   const pcBaseSize = containerSize.pc;
   const spBaseSize = 360;
