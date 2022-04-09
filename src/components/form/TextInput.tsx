@@ -1,4 +1,5 @@
 import { VFC, memo } from 'react';
+import clsx from 'clsx';
 import { TextInputType } from '../../types/form/index';
 
 const componentName = 'TextInput';
@@ -11,7 +12,7 @@ export const TextInput: VFC<TextInputType> = memo((props) => {
   }
 
   return (
-    <div className={size ? `c-input c-input--${size}` : 'c-input'}>
+    <div className={clsx('c-input', size && `c-input--${size}`)}>
       <input type={'text'} name={name} placeholder={placeholder} />
     </div>
   );

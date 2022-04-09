@@ -2,8 +2,14 @@ import Link from 'next/link';
 import { VFC, memo } from 'react';
 import { BreadcrumbType } from 'types/common/breadcrumb';
 
+const componentName = 'BreadCrumb';
+
 export const BreadCrumb: VFC<BreadcrumbType> = memo((props) => {
   const { items } = props;
+
+  if (!items) {
+    throw new Error(`Unexpected Component Props. For ${componentName}`);
+  }
 
   return (
     <ul className={'c-breadcrumb'}>

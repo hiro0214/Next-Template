@@ -1,4 +1,5 @@
 import { VFC, memo } from 'react';
+import clsx from 'clsx';
 import { SelectBoxType } from '../../types/form/index';
 
 const componentName = 'SelectBox';
@@ -11,7 +12,7 @@ export const SelectBox: VFC<SelectBoxType> = memo((props) => {
   }
 
   return (
-    <div className={hdg ? 'c-select c-select--hdg' : 'c-select'}>
+    <div className={clsx('c-select', hdg && 'c-select--hdg')}>
       {hdg && <span className={'c-select__hdg'}>{hdg}</span>}
       <select name={name}>
         {values.map((value) => (

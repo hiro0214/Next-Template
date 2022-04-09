@@ -2,9 +2,15 @@ import { VFC, memo, useState } from 'react';
 import { slideDown, slideUp } from 'modules/common/_accordion';
 import { AccordionType } from 'types/common/accordion';
 
+const componentName = 'Accordion';
+
 export const Accordion: VFC<AccordionType> = memo((props) => {
   const { name, label, children } = props;
   const [isActive, setActive] = useState(false);
+
+  if (!name || !label || !children) {
+    throw new Error(`Unexpected Component Props. For ${componentName}`);
+  }
 
   const onclickTrigger = () => {
     const sec = 300;

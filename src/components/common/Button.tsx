@@ -1,4 +1,5 @@
 import { VFC, memo } from 'react';
+import clsx from 'clsx';
 import { CommonButtonType } from '../../types/common/button';
 
 export const Button: VFC<CommonButtonType> = memo((props) => {
@@ -6,7 +7,7 @@ export const Button: VFC<CommonButtonType> = memo((props) => {
 
   return (
     <button
-      className={color ? `c-btn c-btn--${color}` : 'c-btn'}
+      className={clsx('c-btn', color && `c-btn--${color}`)}
       type={'button'}
       onClick={onclick}
       disabled={isDisabled}
