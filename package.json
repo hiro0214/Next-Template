@@ -4,16 +4,18 @@
   "private": true,
   "engines": {
     "node": "16.14.0",
-    "npm": "8.5.3"
+    "npm": "^8.6.0"
   },
   "scripts": {
     "stylelint": "stylelint 'src/style/**/*.scss' --fix",
     "prettier": "prettier --write src",
     "eslint": "eslint --fix --ext .ts,.tsx src",
     "format": "npm run stylelint && npm run eslint && npm run prettier",
-    "dev": "next dev --port 8080",
-    "build": "npm run format && next build",
-    "prod": "next build",
+    "pathpida:dev": "pathpida -o src/paths -w",
+    "pathpida:build": "pathpida -o src/paths",
+    "dev": "npm run pathpida:dev & next dev --port 8080",
+    "build": "npm run format && npm run pathpida:build && next build",
+    "prod": "npm run pathpida:build && next build",
     "start": "next start --port 8080"
   },
   "dependencies": {
@@ -32,6 +34,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-unused-imports": "^2.0.0",
+    "pathpida": "^0.18.1",
     "postcss-combine-media-query": "^1.0.1",
     "postcss-scss": "^4.0.3",
     "prettier": "^2.5.1",
