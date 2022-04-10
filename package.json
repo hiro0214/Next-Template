@@ -7,15 +7,14 @@
     "npm": "^8.6.0"
   },
   "scripts": {
-    "stylelint": "stylelint 'src/style/**/*.scss' --fix",
+    "typed-scss": "typed-scss-modules src/styles/.scss/**/*.module.scss -w -n none -e default",
+    "stylelint": "stylelint 'src/styles/**/*.scss' --fix",
     "prettier": "prettier --write src",
     "eslint": "eslint --fix --ext .ts,.tsx src",
     "format": "npm run stylelint && npm run eslint && npm run prettier",
-    "pathpida:dev": "pathpida -o src/paths -w",
-    "pathpida:build": "pathpida -o src/paths",
-    "dev": "npm run pathpida:dev & next dev --port 8080",
-    "build": "npm run format && npm run pathpida:build && next build",
-    "prod": "npm run pathpida:build && next build",
+    "dev": "npm run typed-scss & pathpida -o src/paths -w & next dev --port 8080",
+    "prebuild": "npm run format && pathpida -o src/paths",
+    "build": "npm run prebuild && next build",
     "start": "next start --port 8080"
   },
   "dependencies": {
@@ -47,6 +46,7 @@
     "stylelint-config-standard": "^25.0.0",
     "stylelint-prettier": "^2.0.0",
     "swr": "^1.2.2",
+    "typed-scss-modules": "^6.2.0",
     "typescript": "^4.5.5"
   }
 }

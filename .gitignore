@@ -39,3 +39,6 @@ yarn-error.log*
 
 # pathpida
 src/paths/
+
+# typed-scss-modules
+src/**/*.module.scss.d.ts
