@@ -1,5 +1,0 @@
-{
-  "plugins": [
-    "postcss-combine-media-query", "cssnano"
-  ]
-}
